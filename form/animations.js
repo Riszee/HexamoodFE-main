@@ -44,6 +44,29 @@ const initializeAnimations = () => {
     gsap.from(".footer-top", defaultAnimation);
     gsap.from(".footer-subtext", defaultAnimation);
     gsap.from(".footer-bottom", defaultAnimation);
+
+    // Navbar hover animations
+    const navLinks = document.querySelectorAll('nav a');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            gsap.to(link, {
+                color: '#FF6B6B', // Sesuaikan dengan warna yang diinginkan
+                scale: 1.1,
+                duration: 0.3,
+                ease: "power1.out"
+            });
+        });
+
+        link.addEventListener('mouseleave', () => {
+            gsap.to(link, {
+                color: '#333333', // Kembalikan ke warna default
+                scale: 1,
+                duration: 0.3,
+                ease: "power1.out"
+            });
+        });
+    });
 };
 
 export { initializeAnimations };

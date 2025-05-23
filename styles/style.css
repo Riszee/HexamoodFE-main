@@ -42,6 +42,14 @@
   }
   nav a {
     color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    position: relative;
+    cursor: pointer;
+  }
+  nav a.active {
+    color: #FF6B6B;
   }
   .auth-buttons {
     display: flex;
@@ -83,11 +91,20 @@
 
 
   main {
-    max-width: 1200px;
+    max-width:100%;
     margin: 0 auto;
   }
   .hero {
     background-color: #d9eafc;
+    background-image: url('/images/health.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll, local;
+    background-blend-mode: normal;
+    background-color: rgba(217, 234, 252, 0.8);
+    width: 100%;
+    min-height: 60vh;
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -123,14 +140,12 @@
     user-select: none;
   }
   .hero-illustration {
-    flex: 1 1 280px;
-    max-width: 320px;
     position: relative;
+    overflow: hidden;
   }
   .hero-illustration img {
     width: 100%;
     height: auto;
-    display: block;
   }
   .hero-cloud {
     position: absolute;
@@ -320,7 +335,7 @@
     }
     .hero {
       flex-direction: column;
-      padding: 32px 16px 48px 16px;
+      padding: 24px 16px 32px 16px;
     }
     .hero-text {
       max-width: 100%;
